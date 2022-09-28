@@ -16,7 +16,7 @@ app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
-
+print(user_id)
 user1 = user_id.split('||')[0]
 user2 = user_id.split('||')[1]
 user3 = user_id.split('||')[2]
@@ -57,10 +57,4 @@ wm = WeChatMessage(client)
 wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 res = wm.send_template(user1, template_id, data)
-print(res)
-res = wm.send_template(user2, template_id, data)
-print(res)
-res = wm.send_template(user3, template_id, data)
-print(res)
-res = wm.send_template(user4, template_id, data)
-print(res)
+
