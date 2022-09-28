@@ -49,15 +49,16 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, temperature = get_weather()
 data = {"weather":{"value":wea},"temperature":{"value":temperature},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-print(user_id)
-print(user_id.split('||'))
-print(user_id.split('||')[0])
+user1 = user_id.split('||')[0]
+user2 = user_id.split('||')[1]
+user3 = user_id.split('||')[2]
+user4 = user_id.split('||')[3]
 
-res = wm.send_template(user_id.split('||')[0], template_id, data)
+res = wm.send_template(user1, template_id, data)
 print(res)
-res = wm.send_template(user_id.split('||')[1], template_id, data)
+res = wm.send_template(user2, template_id, data)
 print(res)
-res = wm.send_template(user_id.split('||')[2], template_id, data)
+res = wm.send_template(user3, template_id, data)
 print(res)
-res = wm.send_template(user_id.split('||')[3], template_id, data)
+res = wm.send_template(user4, template_id, data)
 print(res)
